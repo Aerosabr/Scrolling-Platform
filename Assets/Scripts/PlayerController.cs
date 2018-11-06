@@ -57,5 +57,13 @@ public class PlayerController : MonoBehaviour {
             other.gameObject.SetActive(false);
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag(pickup_tag))
+        {
+            other.gameObject.SetActive(false);
+            gm.score++;
+        }
+    }
 }
 
